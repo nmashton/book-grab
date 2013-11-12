@@ -10,4 +10,4 @@ To use this script, first rename `config.ini.template` to `config.ini` and enter
 
     python grab.py
 
-The script will put the files it extracts from your doc in */content*, and it will put local copies of the doc's images in */content/images*.
+The script will put the files it extracts from your doc in */Contents*, and it will put local copies of the doc's images in */Contents/images*.
