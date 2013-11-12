@@ -18,10 +18,10 @@ class Bot():
 		self.content = ""
 
 		# initialize the dirs where files will go, if necessary
-		if not path.exists("./content"):
-			mkdir("./content")
-		if not path.exists("./content/images"):
-			mkdir("./content/images")
+		if not path.exists("./Contents"):
+			mkdir("./Contents")
+		if not path.exists("./Contents/images"):
+			mkdir("./Contents/images")
 
 	def my_doc_content(self,format="txt"):
 		"""
@@ -67,7 +67,7 @@ class Bot():
 				else:
 					filename = "image%03d.jpg" % counter
 					## this really ought to check for MIME type, but ... eh. later.
-				urlretrieve(url, "./content/images/" + filename)
+				urlretrieve(url, "./Contents/images/" + filename)
 				new_line = "![" + text + "](" + filename + ")"
 				ys.append(new_line)
 			else:
@@ -135,7 +135,7 @@ def dump_pairs_to_files(xs):
 	"""
 	counter = 1
 	for x in xs:
-		f = open("./content/%(c)02d-%(n)s.md" % {"c":counter,"n":x["name"]},"w")
+		f = open("./Contents/%(c)02d-%(n)s.md" % {"c":counter,"n":x["name"]},"w")
 		f.write(x["body"])
 		f.close()
 		counter += 1
